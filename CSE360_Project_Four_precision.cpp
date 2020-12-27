@@ -26,7 +26,7 @@ void Calculator(char leo);
 void PostFix_Operation(string nadim_string);
 void postFix();
 void inFix();
-
+void init();
 stack<ll>Stack;
 string str;
 
@@ -36,54 +36,6 @@ void init()
         Stack.pop();
 }
 
-void Addition()
-{
-    ll operator1,operator2,S;
-    operator2=Stack.top();
-    Stack.pop();
-    operator1=Stack.top();
-    Stack.pop();
-    S=operator1+operator2;
-    Stack.push(S);
-}
-
-void Substraction()
-{
-    ll operator1,operator2,S;
-    operator2=Stack.top();
-    Stack.pop();
-    operator1=Stack.top();
-    Stack.pop();
-    S=operator1-operator2;
-    Stack.push(S);
-}
-
-void Multiplication()
-{
-    ll operator1,operator2,S;
-    operator2=Stack.top();
-    Stack.pop();
-    operator1=Stack.top();
-    Stack.pop();
-    S=operator1*operator2;
-    Stack.push(S);
-}
-
-void Division()
-{
-    ll operator1,operator2,S;
-    operator2=Stack.top();
-    Stack.pop();
-    if (operator2)
-    {
-        operator1=Stack.top();
-        Stack.pop();
-        S=operator1/operator2;
-        Stack.push(S);
-    }
-    else
-        cout << "\n\tWrong equation!!!\n\n\tInput Correctly Again!\n\n";
-}
 void Calculator(char leo)
 {
     if (leo=='+')
@@ -119,6 +71,56 @@ int precision(char leo)
     else
         return -1;
 }
+
+void Addition()
+{
+    ll operand1,operand2,operation;
+    operand2=Stack.top();
+    Stack.pop();
+    operand1=Stack.top();
+    Stack.pop();
+    operation=operand1+operand2;
+    Stack.push(operation);
+}
+
+void Substraction()
+{
+    ll operand1,operand2,operation;
+    operand2=Stack.top();
+    Stack.pop();
+    operand1=Stack.top();
+    Stack.pop();
+    operation=operand1-operand2;
+    Stack.push(operation);
+}
+
+void Multiplication()
+{
+    ll operand1,operand2,operation;
+    operand2=Stack.top();
+    Stack.pop();
+    operand1=Stack.top();
+    Stack.pop();
+    operation=operand1*operand2;
+    Stack.push(operation);
+}
+
+void Division()
+{
+    ll operand1,operand2,operation;
+    operand2=Stack.top();
+    Stack.pop();
+    if (operand2)
+    {
+        operand1=Stack.top();
+        Stack.pop();
+        operation=operand1/operand2;
+        Stack.push(operation);
+    }
+    else
+        cout << "\n\tWrong equation!!!\n\n\tInput Correctly Again!\n\n";
+}
+
 
 void PostFix_Operation(string nadim_string)
 {
