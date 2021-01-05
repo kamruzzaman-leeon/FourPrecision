@@ -1,6 +1,9 @@
 ///kamruzzaman leeon 2018-1-60-252
 ///Md. Nadim    2018-1-60-161
+///Zakir Hossain 2016-3-60-018
+
 ///CSE360 PROJECT
+///section 3
 ///EWU
 
 #include <bits/stdc++.h>
@@ -190,7 +193,7 @@ void inFix()
         }
         else
         {
-            while(st.top()!='N' && precision(str[i])<=precision(st.top()))///check 110 to 117
+            while(st.top()!='N' && precision(str[i])<=precision(st.top()))///check 68 to 76
             {
                 ns+=st.top();
                 st.pop();
@@ -209,8 +212,9 @@ void inFix()
 int main()
 {
 
-    int choice,j=1;
-    for (int i=1; i<=j; i++)
+    int choice;
+    char leo;
+    do
     {
         init();
         cout << "\n\n\tEnter Your Expression(It's work only for integer number):\n"
@@ -219,16 +223,15 @@ int main()
              << "\tEnter Choice: ";
         cin >> choice;
         if(choice==1)
-            inFix();///154 line
+            inFix();///159 line
         else if(choice==2)
             postFix();
         else
             cout << "\n\n\tWrong Choice.you have to choice between 1 & 2 \n\n";
 
         cout << "Do you want to continue??? y/n: ";
-        char leo;
+
         cin >> leo;
-        if(leo=='y' || leo=='Y')
-            j++;
-    }
+
+    }while(leo=='y' || leo=='Y');
 }
